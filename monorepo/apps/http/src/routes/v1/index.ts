@@ -85,7 +85,7 @@ router.get("/elements", async (req, res) => {
   const elements = await client.element.findMany();
 
   res.json({
-    elements: elements.map((e) => ({
+    elements: elements.map((e: any) => ({
       id: e.id,
       imageUrl: e.imageUrl,
       width: e.width,
@@ -98,7 +98,7 @@ router.get("/elements", async (req, res) => {
 router.get("/avatars", async (req, res) => {
   const avatars = await client.avatar.findMany();
   res.json({
-    avatars: avatars.map((x) => ({
+    avatars: avatars.map((x: any) => ({
       id: x.id,
       imageUrl: x.imageUrl,
       name: x.name,
